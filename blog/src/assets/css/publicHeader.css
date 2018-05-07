@@ -1,0 +1,24 @@
+h1, h2 {
+  font-weight: normal;color:red;font-size:1.4em;
+}
+#aboutMe,.el-container{height:100%;}
+#headerPg,#bgImg,#mask{/*width:30%;*/width:300px;}
+article{left:0;}
+.el-menu{width:100%;z-index:10;}
+#content{height:100%;}
+
+@media screen and (max-width:45.6em){
+    .el-aside,#headerPg,#mask{width:100%;height:auto;height:12em;box-sizing:border-box;padding-top:0;}
+    .el-main{width:100%;/*margin-top:12em;*/padding:0;}
+    #content{position:absolute;width:100%;left:0;right:0;top:12em;bottom:0;z-index:10;box-sizing:border-box;/*padding:1em 2em;*/}
+ }
+
+/*@media screen and (max-width:45.6em){
+    .el-aside,#headerPg,#mask{width:100%;height:auto;height:21.3em;box-sizing:border-box;padding-top:0;}
+    .el-main{width:100%;margin-top:21.3em;}
+    #content{position:absolute;width:100%;left:0;right:0;top:21.3em;bottom:0;z-index:2;}
+    #figure{top:5.7em;}
+    #self{top:4.3em;}
+    #content{height:auto;}
+}
+*/

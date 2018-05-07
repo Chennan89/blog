@@ -1,0 +1,18 @@
+*{outline: none;}
+#headerPg{width:100%;height:100%;position:absolute;z-index:20;top:0;bottom:0;left:0;right:0;background:url(../blog_head_flower.jpg);background-size:cover;}
+#mask{position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(68, 68, 68, 0.6);background-image:-webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));background-image:linear-gradient(140deg,rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));}
+#figure{position:relative;width:8.5em;height:8.5em;left:50%;margin-left:-4.3em;top:18%;}
+#figureImg,.circleCont{width:100%;height:100%;border-radius:50%;}
+#figureImg{position:relative;z-index:5;transform-origin:0 50%;}
+.circleCont{text-align:center;position:absolute;z-index:4;top:0;left:0;background:#112;color:#EEE;}
+.circleCont span{display:block;font-weight:bold;height:1em;line-height:1em;margin-top:1em;font-size:0.9em;color:#EEE;overflow:hidden;}
+.circleCont span:first-child{margin-top:2.15em;}
+#self{display:block;position:relative;top:18%;margin-top:2.86em;color:#FFF;letter-spacing:0.3em;width:8em;left:50%;margin-left:-4em;text-align:center;}
+@media screen and (max-width:45.6em){
+	#figure{width:5em;height:5em;margin-left:-2.5em;top:5em;}
+	/*#figureImg,.circleCont{width:5em;height:5em;margin-left:-2.5em;}*/
+	#self{top:4.3em;}
+	.circleCont span{height:0.8em;line-height:0.8em;font-size:0.6em;}
+	.circleCont span:first-child{margin-top:1.5em;}
+	#self{display:none;}
+}
