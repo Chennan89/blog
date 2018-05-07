@@ -23,3 +23,5 @@ back_end是node服务端，使用KOA2及其middlewares
   2. 使用markdown-it进行markdown语法的解析
   3. MongoDB进行数据存取操作
   4. 生产环境使用PM2进行应用管理
+
+>后台管理用户名/密码：aaa/aaa  另需要安装MongoDB，collectionName自己修改
