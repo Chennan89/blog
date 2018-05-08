@@ -43,14 +43,28 @@
 				news:''
 			}//data Function should return an object
 		},
-		methods:{},
-		async created(){
-			let _id=this.$route.params.uniquekey;
-			let url=`${this.CONST_CONFIG.SERVER_URL}/getArticleByID/${_id}`;
-			const newsInfo=await axios.get(url);
+		methods:{
+			async getDetail(_id,url){
+				// let _id=this.$route.params.uniquekey;
+				// let url=`${this.CONST_CONFIG.SERVER_URL}/getArticleByID/${_id}`;
+				const newsInfo=await axios.get(url);
 			
-			this.news=md.render((newsInfo.data.res[0].content));
+				this.news=md.render((newsInfo.data.res[0].content));
+			}
 		},
+		created(){
+			const _id=this.$route.params.uniquekey,
+				url=`${this.CONST_CONFIG.SERVER_URL}/getArticleByID/${_id}`;
+			this.getDetail(_id,url);
+		},
+		beforeRouteUpdate (to, from, next) {
+		    console.log(this,to.params.uniquekey)
+		    const _id=to.params.uniquekey,
+				url=`${this.CONST_CONFIG.SERVER_URL}/getArticleByID/${_id}`;
+		    this.getDetail(_id,url);
+		    next();
+		    // don't forget to call next()
+		  }
 		//components:{HeaderPage,MenuPageVertical}
 	}
 </script>

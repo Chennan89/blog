@@ -9,7 +9,8 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/',//这里不能改。。。  找的是index.html所在的路径
+    
     proxyTable: {},
 
     // Various Dev Server settings
@@ -44,8 +45,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-
+    assetsPublicPath: './',
+ 
     /**
      * Source Maps
      */
