@@ -1,3 +1,6 @@
+/*require("babel-core/register");
+require("babel-polyfill");
+*/
 const jwt = require('jsonwebtoken');
 const secret='@#$';//线上换掉
 

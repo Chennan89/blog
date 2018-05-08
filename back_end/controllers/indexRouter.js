@@ -1,3 +1,6 @@
+/*require("babel-core/register");
+require("babel-polyfill");
+*/
 const dbOperator=require  ('../models/dbOper.js');
 const upload=require  ('./uploadModel.js');
 const transMarkDown=require  ('../models/markdownTrans.js');//解析markdown  现在在前台进行解析了  但是列表页 目前还在用
@@ -30,13 +33,13 @@ const initRouter={
 		);
 		router.post('/insert',koaBody(),tokenUtil.checkToken, async (ctx,next)=>{
 			let reqBody=ctx.request.body;
-			dbname="articles";
-			collectionName="article";
+			const dbname="articles";
+			const collectionName="article";
 			if(!reqBody.content){
 				ctx.body={code:400,result:'请输入内容'};
 				return;
 			}
-			insertObj={content:reqBody.content,date:reqBody.date,type:reqBody.type};
+			const insertObj={content:reqBody.content,date:reqBody.date,type:reqBody.type};
 			let res=await dbOperator.insertArticle(ctx,dbname,collectionName,insertObj);
 			
 			ctx.body={code:0,result:res.insertedCount};
@@ -44,17 +47,17 @@ const initRouter={
 
 		router.post('/update',koaBody(),tokenUtil.checkToken,async (ctx,next)=>{
 			let reqBody=ctx.request.body;
-			dbname="articles";
-			collectionName="article";
-			updateObj={content:reqBody.content,date:reqBody.date,type:reqBody.type,uniqueKey:reqBody.uniqueKey};
+			const dbname="articles";
+			const collectionName="article";
+			const updateObj={content:reqBody.content,date:reqBody.date,type:reqBody.type,uniqueKey:reqBody.uniqueKey};
 			let res=await dbOperator.updateArticle(mongo,ctx,dbname,collectionName,updateObj);
 			ctx.body={code:0,result:res.result.nModified};
 		});
 
 		router.get('/getAllArticles/:currentPage/:size/:total',async (ctx,next)=>{
 			let reqParams=ctx.params;
-			dbname="articles";
-			collectionName="article";
+			const dbname="articles";
+			const collectionName="article";
 			let currentPage=reqParams.currentPage || 1;
 			let size=reqParams.size || 10;
 			let getTotal=reqParams.total==0?true:false;//如果total是0 说明第一次请求，需要请求总条数
@@ -75,8 +78,8 @@ const initRouter={
 
 		router.get('/getArticleByID/:id',async (ctx,next)=>{
 			let reqParams=ctx.params;
-			dbname="articles";
-			collectionName="article";
+			const dbname="articles";
+			const collectionName="article";
 			let id=reqParams.id;
 			let res=await dbOperator.getArticleByID(mongo,ctx,dbname,collectionName,id);
 			
@@ -88,8 +91,8 @@ const initRouter={
 
 		router.get('/delArticle/:id',tokenUtil.checkToken,async (ctx,next)=>{
 			let reqParams=ctx.params;
-			dbname="articles";
-			collectionName="article";
+			const dbname="articles";
+			const collectionName="article";
 			let id=reqParams.id;
 			//console.log(id)
 			let res=await dbOperator.delArticle(mongo,ctx,dbname,collectionName,id);

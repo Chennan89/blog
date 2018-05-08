@@ -1,3 +1,6 @@
+/*require("babel-core/register");
+require("babel-polyfill");
+*/
 const operator={
 	insertArticle:async function(ctx,dbname,collectionName,insertObj){
 		//console.log(ctx.mongo)

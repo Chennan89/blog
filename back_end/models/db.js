@@ -1,3 +1,6 @@
+/*require("babel-core/register");
+require("babel-polyfill");
+*/
 const MongoDB = require('mongodb');
 const MongoClient = MongoDB.MongoClient;
 const debug = require('debug')('koa-mongo');

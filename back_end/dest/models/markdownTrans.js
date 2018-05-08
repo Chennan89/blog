@@ -1,0 +1,1 @@
+"use strict";var fs=require("fs"),md=require("markdown-it")();function transMarkDown(r){return md.render(r)}module.exports=transMarkDown;
